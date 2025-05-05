@@ -1,7 +1,7 @@
 {
-  "name": "ace-linters",
+  "name": "@cortexapps/ace-linters",
   "author": "Azat Alimov <mkslanc@gmail.com>",
-  "version": "1.5.3",
+  "version": "1.5.3-cortex.3",
   "scripts": {
     "clean": "rimraf build",
     "prebuild": "node prebuild.js",
@@ -18,6 +18,11 @@
     "test:coverage": "nyc npm run test",
     "start-server": "http-server build --cors=\"*\"",
     "generate-typescript-service": "node tools/generate-typescript-service.js"
+  },
+  "publishConfig": {
+    "@cortexapps:registry": "https://npm.pkg.github.com",
+    "tag": "cortex",
+    "access": "restricted"
   },
   "dependencies": {
     "vscode-languageserver-protocol": "^3.17.5",
@@ -51,7 +56,10 @@
   },
   "main": "build/ace-linters.js",
   "types": "types/ace-linters.d.ts",
-  "files": ["build", "types"],
+  "files": [
+    "build",
+    "types"
+  ],
   "typesVersions": {
     "*": {
       "build/ace-language-client": [
@@ -96,7 +104,8 @@
     }
   },
   "repository": {
-    "url": "https://github.com/mkslanc/ace-linters"
+    "type": "git",
+    "url": "https://github.com/cortexapps/ace-linters.git"
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
