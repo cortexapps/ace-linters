@@ -1,6 +1,14 @@
 {
   "name": "ace-linters-root",
   "version": "1.5.2",
+  "private": true,
+  "publishConfig": {
+    "@cortexapps:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cortexapps/ace-linters.git"
+  },
   "scripts": {
     "build:parts": "npm run build -ws",
     "build": "npm run build:parts && webpack",
