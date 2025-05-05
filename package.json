@@ -3,7 +3,7 @@
   "version": "1.5.2",
   "private": true,
   "publishConfig": {
-    "@cortexapps:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
