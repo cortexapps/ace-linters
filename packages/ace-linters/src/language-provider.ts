@@ -510,7 +510,7 @@ export class LanguageProvider {
                             } else if (completion["docMarkdown"]) {
                                 item.docHTML = CommonConverter.cleanHtml(this.options.markdownConverter!.makeHtml(completion["docMarkdown"]));
                             }
-                            if (editor["completer"]) {
+                            if (editor["completer"] && editor["completer"].completions) {
                                 editor["completer"].updateDocTooltip();
                             }
 
