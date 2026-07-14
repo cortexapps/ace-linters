@@ -712,6 +712,11 @@ class SessionLanguageProvider {
         }
 
         bgTokenizer.$tokenizeRow = (row: number) => {
+            if (!bgTokenizer.doc) {
+                // the session was destroyed (session.destroy() nulls the
+                // background tokenizer's doc); there is nothing to tokenize
+                return bgTokenizer.lines[row] = [];
+            }
             var line = bgTokenizer.doc.getLine(row);
             var state = bgTokenizer.states[row - 1];
             var data = bgTokenizer.tokenizer.getLineTokens(line, state, row);
